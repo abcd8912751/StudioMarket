@@ -1,0 +1,22 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="welfare_item_width">540dp</dimen>
+    <dimen name="welfare_item_heigh">640dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="tabIndicatorHeight">4dp</dimen>
+    <dimen name="image_margin">3dp</dimen>
+    <dimen name="news_item_width">172dp</dimen>
+    <dimen name="news_item_heigh">130dp</dimen>
+    <dimen name="news_itemtwo_width">260dp</dimen>
+    <dimen name="news_itemtwo_heigh">200dp</dimen>
+    <dimen name="news_itemone_width">280dp</dimen>
+    <dimen name="news_itemone_heigh">200dp</dimen>
+    <dimen name="fab_size">5dp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="divide_margin">10dp</dimen>
+    <dimen name="evevation">0dp</dimen>
+</resources>

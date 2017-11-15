@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">StudioMarket</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="contact_email">1262768518@qq.com</string>
+    <string name="name_studio">zhangmeng Studio</string>
+    <string name="radio_home">首页</string>
+    <string name="radio_news">资讯</string>
+    <string name="radio_welfare">福利</string>
+    <string name="item_tab_toutiao">头条</string>
+    <string name="item_tab_shehui">社会</string>
+    <string name="item_tab_guonei">国内</string>
+    <string name="item_tab_guoji">国际</string>
+    <string name="item_tab_keji">科技</string>
+    <string name="hint_ip">FTP服务器IP</string>
+    <string name="hint_user">用户名</string>
+    <string name="hint_pass">密码</string>
+    <string name="hint_filepath">远程文件路径</string>
+    <string name="text_snack">正在下载</string>
+    <string name="text_speed">下载速度:</string>
+    <string name="text_remainder">剩余时间:</string>
+</resources>

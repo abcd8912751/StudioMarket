@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="radio_home">首页</string>
+    <string name="radio_news">资讯</string>
+    <string name="radio_welfare">福利</string>
+</resources>

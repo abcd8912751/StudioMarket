@@ -1,0 +1,12 @@
+<com.facebook.drawee.view.SimpleDraweeView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/image_recyclerView_item"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    fresco:actualImageScaleType="focusCrop"
+    fresco:progressBarImage="@mipmap/ic_progress_bar"
+    fresco:progressBarAutoRotateInterval="1000"
+    />

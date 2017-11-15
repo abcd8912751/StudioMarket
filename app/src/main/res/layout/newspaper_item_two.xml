@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/news_two_title"
+        android:singleLine="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/news_two_image1"
+            android:layout_width="@dimen/news_itemtwo_width"
+            android:layout_height="@dimen/news_itemtwo_heigh"
+            android:layout_margin="@dimen/image_margin"
+            fresco:actualImageScaleType="focusCrop"/>
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/news_two_image2"
+            android:layout_width="@dimen/news_itemtwo_width"
+            android:layout_height="@dimen/news_itemtwo_heigh"
+            android:layout_margin="@dimen/image_margin"
+            fresco:actualImageScaleType="focusCrop"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/news_two_stamp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
