@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -38,11 +40,11 @@ public class WelfareRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     private int pageNo;
     private ObjectMapper welfareMissMapper;
     private int width;
-    public WelfareRecyclerAdapter()
+    public WelfareRecyclerAdapter(Context context)
     {
         initMisses();
         welfareMissMapper=new ObjectMapper();
-        width=1080;
+        width=getScreenWidth(context);
         randomHeights=new ArrayList<Integer>();
     }
 
@@ -51,7 +53,14 @@ public class WelfareRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         appendMisses();
     }
 
-
+    public  int getScreenWidth(Context context)
+    {
+        WindowManager wm = (WindowManager) context
+                .getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(outMetrics);
+        return outMetrics.widthPixels;
+    }
 
     public void appendMisses()
     {
