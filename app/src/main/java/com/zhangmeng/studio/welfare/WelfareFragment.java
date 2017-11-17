@@ -32,8 +32,7 @@ public class WelfareFragment extends BaseFragment{
         ButterKnife.bind(this,view);
         StaggeredGridLayoutManager staggeredGridLayoutManager=new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(staggeredGridLayoutManager);
-        final WelfareRecyclerAdapter recyclerAdapter=new WelfareRecyclerAdapter();
-        Fresco.initialize(context);
+        final WelfareRecyclerAdapter recyclerAdapter=new WelfareRecyclerAdapter(context);
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setHasFixedSize(false);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {

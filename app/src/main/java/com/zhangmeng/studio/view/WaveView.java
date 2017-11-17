@@ -30,6 +30,7 @@ public class WaveView extends View{
     private float centerX;
     private float centerY;
     private float roundWidth;
+    private LoadFinishListener listener;
     public WaveView(Context context) {
         this(context,null);
     }
@@ -80,10 +81,15 @@ public class WaveView extends View{
     }
 
     private void drawCustomCircle(Canvas canvas) {
-        if(radiusCurrent>=getCenterX()-10)
+        if(isOutofScreen())
         {
-            radiusCurrent=200;
-            alpha=255;
+            if(listener==null)
+            {
+                radiusCurrent=200;
+                alpha=255;
+            }
+            else
+                listener.OnLoadingFinish();
         }
         paint.setAlpha(alpha);
         paint.setStrokeWidth(roundWidth); //设置圆环的宽度
@@ -121,5 +127,14 @@ public class WaveView extends View{
 
     public void setCenterX(int centerX) {
         this.centerX = centerX;
+    }
+
+    public void setOnLoadFinishListener(LoadFinishListener listener) {
+        this.listener = listener;
+    }
+
+
+    public interface LoadFinishListener{
+        public void OnLoadingFinish();
     }
 }

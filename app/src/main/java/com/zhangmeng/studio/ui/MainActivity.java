@@ -89,6 +89,12 @@ public class MainActivity extends AppCompatActivity
                 position=0;
         }
         showLog("RadioGroup_position: "+position);
+        if(position!=0)
+        {
+            HomeFragment homeFragment=(HomeFragment)fm.findFragmentByTag("0");
+            if(homeFragment!=null)
+                homeFragment.disConnectFtplist();
+        }
         if(position!=mainPresenter.getTemp_position())
         {
             BaseFragment baseFragment=mainPresenter.getTransferFragment(position);

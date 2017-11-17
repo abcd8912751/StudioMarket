@@ -26,7 +26,6 @@ public class NewsPaperAdapter extends PagerAdapter implements NewsContract.Prese
         this.news_View = newsView;
         Context context=newsView.getContext();
         newsModel =new NewsModel(context);
-        Fresco.initialize(context);
         notifyDataSetChanged();
     }
 

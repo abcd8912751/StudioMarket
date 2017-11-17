@@ -3,12 +3,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
+              android:focusable="true"
+              android:focusableInTouchMode="true"
               android:layout_width="match_parent"
               android:layout_height="match_parent" android:weightSum="1">
     <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="?actionBarSize"
                 android:id="@+id/ip_inputLayout"
                 android:hint="@string/hint_ip">
             <EditText
@@ -45,7 +46,6 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/divide_margin"
                 android:hint="@string/hint_filepath"
                 android:id="@+id/text_filepath"
                 android:textColor="@color/primary_text"
@@ -53,7 +53,7 @@
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:orientation="vertical"
-                      android:layout_marginTop="@dimen/divide_margin">
+                                                    >
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:src="@mipmap/ic_download"
-        app:fabSize="normal"
+        app:fabSize="mini"
         app:elevation="@dimen/evevation"
         app:borderWidth="0dp"
         android:id="@+id/floatingButton"/>

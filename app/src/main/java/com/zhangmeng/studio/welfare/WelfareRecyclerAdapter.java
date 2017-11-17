@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zhangmeng.studio.R;
+import com.zhangmeng.studio.application.StudioApplication;
 import com.zhangmeng.studio.beans.WelfareMissJson;
 import com.zhangmeng.studio.ui.ZoomImageActivity;
 import com.zhangmeng.studio.utils.Constants;
@@ -26,7 +27,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
-
 import static com.zhangmeng.studio.utils.LogUtil.showLog;
 
 /**
@@ -44,7 +44,7 @@ public class WelfareRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     {
         initMisses();
         welfareMissMapper=new ObjectMapper();
-        width=getScreenWidth(context);
+        width= StudioApplication.getScreenWidth();
         randomHeights=new ArrayList<Integer>();
     }
 
@@ -53,14 +53,6 @@ public class WelfareRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         appendMisses();
     }
 
-    public  int getScreenWidth(Context context)
-    {
-        WindowManager wm = (WindowManager) context
-                .getSystemService(Context.WINDOW_SERVICE);
-        DisplayMetrics outMetrics = new DisplayMetrics();
-        wm.getDefaultDisplay().getMetrics(outMetrics);
-        return outMetrics.widthPixels;
-    }
 
     public void appendMisses()
     {

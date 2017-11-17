@@ -2,6 +2,8 @@ package com.zhangmeng.studio.application;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.zhangmeng.studio.utils.Constants;
@@ -48,8 +50,18 @@ public class StudioApplication extends Application {
                 //其他配置
                 .build();
         OkHttpUtils.initClient(okHttpClient);
+        Fresco.initialize(this);
     }
 
+    public static int getScreenWidth()
+    {
+
+        WindowManager wm = (WindowManager) context
+                .getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(outMetrics);
+        return outMetrics.widthPixels;
+    }
     @Override
     public void onTerminate() {
         super.onTerminate();

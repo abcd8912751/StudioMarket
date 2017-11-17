@@ -59,13 +59,12 @@ public class HomeFragment extends BaseFragment implements DownloadContract.Downl
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_home,container,false);
         ButterKnife.bind(this,view);
-
         floatingButton.setOnClickListener(new DownloadListener());
         floatingButton.setTag("false");
         View viewsheet=view.findViewById(R.id.nestedscroll);
+
         BottomSheetBehavior bottomSheetBehavior=BottomSheetBehavior.from(viewsheet);
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-
         TextInputLayout username=(TextInputLayout)view.findViewById(R.id.edit_username);
         TextInputLayout password=(TextInputLayout)view.findViewById(R.id.edit_password);
         TextInputLayout ip=(TextInputLayout) view.findViewById(R.id.ip_inputLayout);
@@ -108,10 +107,6 @@ public class HomeFragment extends BaseFragment implements DownloadContract.Downl
         ftp=new FTPresenter(this,behaviorView);
         return view;
     }
-
-
-
-
 
 
 
@@ -175,5 +170,9 @@ public class HomeFragment extends BaseFragment implements DownloadContract.Downl
         floatingButton.setImageResource(R.mipmap.ic_download);
         if(behaviorView!=null)
             behaviorView.hide();
+    }
+    public void disConnectFtplist()
+    {
+        ftp.disConnectFtplist();
     }
 }

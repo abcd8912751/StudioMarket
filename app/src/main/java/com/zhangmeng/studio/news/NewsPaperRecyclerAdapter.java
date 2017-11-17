@@ -10,12 +10,14 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zhangmeng.studio.R;
+import com.zhangmeng.studio.application.StudioApplication;
 import com.zhangmeng.studio.beans.NewsPaperJson;
 import com.zhangmeng.studio.beans.NewsPaperJson.ResultBean.*;
 import com.zhangmeng.studio.utils.ToastUtils;
@@ -43,12 +45,15 @@ public class NewsPaperRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.
     private List<NewsBean> newsBeans;
     private String NEWS_TYPE;
     private ObjectMapper newsMapper;
+    private LinearLayout.LayoutParams layoutParams;
+    private int screenWidth;
     public NewsPaperRecyclerAdapter(String type)
     {
         this.NEWS_TYPE=type;
         requestNews();
         newsMapper=new ObjectMapper();
-
+        layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        screenWidth= StudioApplication.getScreenWidth();
     }
 
 
@@ -149,9 +154,9 @@ public class NewsPaperRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.
             viewHolder.newsTitle.setText(newsBean.getTitle());
             imageUri_s01=Uri.parse(newsBean.getThumbnail_pic_s());
             viewHolder.newsImage_s01.setImageURI(imageUri_s01);
+            int heigh=viewHolder.newsTitle.getHeight();
+            int margintop=viewHolder.newsImage_s01.getHeight()-heigh;
             viewHolder.newsStamp.setText(getStampOfNewsBean(newsBean));
-
-
         }
         else if(holder instanceof ViewHolderTwo)
             {
@@ -239,6 +244,10 @@ public class NewsPaperRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.
             super(itemView);
             ButterKnife.bind(this,itemView);
             newsTitle.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+            ViewGroup.LayoutParams layoutParam=newsImage_s01.getLayoutParams();
+            layoutParam.width=screenWidth/2+20;
+            layoutParam.height=layoutParam.width*3/4;
+            newsImage_s01.setLayoutParams(layoutParam);
         }
     }
 
@@ -255,6 +264,11 @@ public class NewsPaperRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.
             super(itemView);
             ButterKnife.bind(this,itemView);
             newsTitle.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+            ViewGroup.LayoutParams layoutParam=newsImage_s01.getLayoutParams();
+            layoutParam.width=screenWidth/2-3;
+            layoutParam.height=layoutParam.width*3/4;
+            newsImage_s01.setLayoutParams(layoutParam);
+            newsImage_s02.setLayoutParams(layoutParam);
         }
     }
 
@@ -273,7 +287,12 @@ public class NewsPaperRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.
             super(itemView);
             ButterKnife.bind(this,itemView);
             newsTitle.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-
+            ViewGroup.LayoutParams layoutParam=newsImage_s01.getLayoutParams();
+            layoutParam.width=screenWidth/3-3;
+            layoutParam.height=layoutParam.width*3/4;
+            newsImage_s01.setLayoutParams(layoutParam);
+            newsImage_s02.setLayoutParams(layoutParam);
+            newsImage_s03.setLayoutParams(layoutParam);
         }
     }
 }

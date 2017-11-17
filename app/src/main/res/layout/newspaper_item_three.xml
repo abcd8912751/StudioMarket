@@ -18,20 +18,20 @@
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/news_three_image1"
             android:background="@color/colorPrimary"
-            android:layout_width="@dimen/news_item_width"
-            android:layout_height="@dimen/news_item_heigh"
+            android:layout_width="@dimen/news_itemthree_width"
+            android:layout_height="@dimen/news_itemthree_heigh"
             android:layout_margin="@dimen/image_margin"
             fresco:actualImageScaleType="focusCrop"/>
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/news_three_image2"
-            android:layout_width="@dimen/news_item_width"
-            android:layout_height="@dimen/news_item_heigh"
+            android:layout_width="@dimen/news_itemthree_width"
+            android:layout_height="@dimen/news_itemthree_heigh"
             android:layout_margin="@dimen/image_margin"
             fresco:actualImageScaleType="focusCrop"/>
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/news_three_image3"
-            android:layout_width="@dimen/news_item_width"
-            android:layout_height="@dimen/news_item_heigh"
+            android:layout_width="@dimen/news_itemthree_width"
+            android:layout_height="@dimen/news_itemthree_heigh"
             android:layout_margin="@dimen/image_margin"
             fresco:actualImageScaleType="focusCrop"/>
     </LinearLayout>

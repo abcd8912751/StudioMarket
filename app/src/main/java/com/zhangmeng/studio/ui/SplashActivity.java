@@ -22,30 +22,23 @@ import static com.zhangmeng.studio.utils.LogUtil.showLog;
 public class SplashActivity extends AppCompatActivity {
     @BindView(R.id.waveView)
     WaveView waveView;
-    public Handler handler;
-    public final int CIRCLE_MESSAGE=101;
+    public boolean isJump=false;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
-        handler=new Handler(){
-            @Override
-            public void handleMessage(Message msg) {
-                if(msg.what==CIRCLE_MESSAGE)
-                {
-                    if(waveView.isOutofScreen())
-                    {
-                        Intent intent=new Intent(SplashActivity.this,MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    else
-                        handler.sendEmptyMessageDelayed(CIRCLE_MESSAGE,1200);
-                }
-            }
-        };
-        handler.sendEmptyMessage(CIRCLE_MESSAGE);
 
+        waveView.setOnLoadFinishListener(new WaveView.LoadFinishListener() {
+            @Override
+            public void OnLoadingFinish() {
+                if(isJump)
+                    return;
+                isJump=true;
+                Intent intent=new Intent(SplashActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

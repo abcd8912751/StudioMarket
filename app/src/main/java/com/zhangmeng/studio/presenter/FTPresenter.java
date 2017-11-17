@@ -296,6 +296,12 @@ public class FTPresenter implements Presenter {
                     });
         }
     }
+
+    public void disConnectFtplist()
+    {
+        if(listAdapter!=null)
+            listAdapter.disconnect();
+    }
 }
 
 

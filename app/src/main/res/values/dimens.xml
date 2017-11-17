@@ -9,11 +9,12 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="tabIndicatorHeight">4dp</dimen>
     <dimen name="image_margin">3dp</dimen>
-    <dimen name="news_item_width">172dp</dimen>
-    <dimen name="news_item_heigh">130dp</dimen>
-    <dimen name="news_itemtwo_width">260dp</dimen>
-    <dimen name="news_itemtwo_heigh">200dp</dimen>
-    <dimen name="news_itemone_width">280dp</dimen>
+    <dimen name="news_itemthree_width">114dp</dimen>
+    <dimen name="news_itemthree_heigh">88dp</dimen>
+    <dimen name="news_item_heighlow">66dp</dimen>
+    <dimen name="news_itemtwo_width">172dp</dimen>
+    <dimen name="news_itemtwo_heigh">130dp</dimen>
+    <dimen name="news_itemone_width">260dp</dimen>
     <dimen name="news_itemone_heigh">200dp</dimen>
     <dimen name="fab_size">5dp</dimen>
     <dimen name="text_size">20sp</dimen>
