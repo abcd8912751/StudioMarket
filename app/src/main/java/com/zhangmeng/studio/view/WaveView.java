@@ -80,6 +80,12 @@ public class WaveView extends View{
         }
     }
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+    }
+
     private void drawCustomCircle(Canvas canvas) {
         if(isOutofScreen())
         {
@@ -99,7 +105,6 @@ public class WaveView extends View{
     }
     public boolean isOutofScreen()
     {
-        showLog("alpha:"+alpha);
         if(alpha<100)
             return true;
         if(centerX<1||radiusCurrent<centerX-20)

@@ -175,4 +175,10 @@ public class HomeFragment extends BaseFragment implements DownloadContract.Downl
     {
         ftp.disConnectFtplist();
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        disConnectFtplist();
+    }
 }

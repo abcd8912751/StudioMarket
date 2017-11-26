@@ -20,7 +20,7 @@ import okhttp3.OkHttpClient;
  */
 
 public class StudioApplication extends Application {
-    public Context getContext() {
+    public static Context getContext() {
         return context;
     }
 
@@ -52,6 +52,7 @@ public class StudioApplication extends Application {
         OkHttpUtils.initClient(okHttpClient);
         Fresco.initialize(this);
     }
+
 
     public static int getScreenWidth()
     {

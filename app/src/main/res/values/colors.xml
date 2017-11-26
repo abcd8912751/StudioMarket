@@ -19,6 +19,7 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
     <color name="colorClarity">#00000000</color>
+    <color name="roller_bg">#808080</color>
     <array name="progress_colors_light">
         <item>#FF03A9F4</item>
         <item>#FFD8433C</item>

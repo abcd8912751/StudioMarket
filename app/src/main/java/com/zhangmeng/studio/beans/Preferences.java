@@ -4,6 +4,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.zhangmeng.studio.application.StudioApplication;
+
 
 /**
  * Created by hzxuwen on 2015/4/13.
@@ -14,7 +16,17 @@ public class Preferences {
     private static final String KEY_IP="ftpip";
     private static final String KEY_REMOTE_PATH="remotepath";
     private static final String KEY_THREAD_NUM="threadnum";
+    private static final String KEY_ROLLER_TEXT = "rollertext";   //用户名
     private static Context context;
+
+    public static void saveRollerText(String account) {
+        saveString(KEY_ROLLER_TEXT, account);
+    }
+
+    public static String getRollerText() {
+        return getString(KEY_ROLLER_TEXT);
+    }
+
 
     /**
      * 设置静态Context
@@ -84,7 +96,7 @@ public class Preferences {
 
     static SharedPreferences getSharedPreferences() {
         if(context==null)
-            return null;
+            context= StudioApplication.getContext();
         return context.getSharedPreferences("FTP_CONFIG", Context.MODE_PRIVATE);
     }
 

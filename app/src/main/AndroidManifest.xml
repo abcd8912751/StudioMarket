@@ -26,12 +26,22 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.zhangmeng.studio.ui.RollerActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
             android:name="com.zhangmeng.studio.ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name="com.zhangmeng.studio.ui.WebSurfActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.zhangmeng.studio.ui.DropBallActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
